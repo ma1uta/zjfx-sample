@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
-<?import org.zjfx.ImageButton?>
+<?import org.zjfx.control.ImageButton?>
 <?import org.zjfx.displayer.*?>
 
 <GridPane fx:controller="org.zjfx.sample.MainAppController"
