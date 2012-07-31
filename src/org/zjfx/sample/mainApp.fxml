@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import org.zjfx.ImageButton?>
+<?import org.zjfx.displayer.*?>
+
+<GridPane fx:controller="org.zjfx.sample.MainAppController"
+    xmlns:fx="http://javafx.com/fxml"
+    alignment="center" hgap="10" vgap="10">
+
+    <Label text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="title"/>
+
+    <Label text="Text:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TextField fx:id="text" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <fx:include source="buttons.fxml"/>
+
+    <ImageButton GridPane.columnIndex="0" GridPane.rowIndex="3" image="close"/>
+
+    <StringDisplayer GridPane.columnIndex="1" GridPane.rowIndex="3" attr="title"/>
+
+</GridPane>

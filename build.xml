@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="zjfx-sample" default="run" basedir=".">
+
+    <target name="init-property">
+        <property file="build.properties"/>
+        <property name="src" value="src"/>
+        <property name="classpath" value="${jxfrt.lib}:${zjfx.core}"/>
+    </target>
+
+    <target name="clean" depends="init-property">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="init" depends="clean">
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src}"
+               destdir="${build.dir}"
+               classpath="${classpath}"
+               includes="**/*.java" />
+    </target>
+
+    <target name="build" depends="compile">
+        <copy todir="${build.dir}">
+            <fileset dir="${src}" excludes="**/*.java"/>
+        </copy>
+    </target>
+
+    <target name="run" depends="build">
+        <java classname="${main-class}" dir="${build.dir}" fork="true" classpath="${classpath}:${build.dir}"/>
+    </target>
+
+    <target name="debug" depends="build">
+        <java classname="${main-class}" dir="${build.dir}" fork="true" classpath="${classpath}:${build.dir}"
+                args="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5000"/>
+    </target>
+</project>
