@@ -10,10 +10,10 @@ import org.zjfx.ModelController;
 public class MainAppController extends ModelController {
 
     @FXML
-    @Attribute(modelAttribute = "title", controlProperty = "text")
+    @Attribute
     private Label title;
 
     @FXML
-    @Attribute(modelAttribute = "text", controlProperty = "text", converter = IntegerStringConverter.class)
+    @Attribute(converter = IntegerStringConverter.class)
     private TextField text;
 }
